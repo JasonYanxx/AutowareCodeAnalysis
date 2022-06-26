@@ -25,6 +25,16 @@ rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
 colcon build --cmake-args -DCMAKE_BUILD_TYPE=ReleaseO
 ```
 
+In addtion, two  **modifications ** are made in the source code:
+
+- `visualization/gazebo_world_description/worlds/autoware.world `
+  
+  - change to `<sim_time>0</sim_time> `
+
+- `simulation/vehicle_gazebo_simulation_launcher/launch/gazebo_launcher.launch` 
+  
+  - change to `<arg name="world_name" default="simple"/>`
+
 ### step 3 upgrade gazebo
 
 - Please refer to the gazebo offical [tutorual 1](https://classic.gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=9.0) and [tutorial 2](https://classic.gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros) for details. Only small changes are made.
