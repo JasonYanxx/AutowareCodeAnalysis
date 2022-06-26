@@ -82,21 +82,21 @@ ___
   
   - tick `voxel_grid_filter` 
     
-    ![image](C:\Users\Administrator\Desktop\WorkSpace\AutowareRepo\doc\voxel_grid_filter.png)
+    ![image](doc/voxel_grid_filter.png)
 
 - in `Computing` page
   
   - click `app` of `ndt_matching` and tick `Intial Pos`, and then tick `ndt_matching`
     
-    ![image](C:\Users\Administrator\Desktop\WorkSpace\AutowareRepo\doc\ndt_matching.png)
+    ![image](doc/ndt_matching.png)
   
   - tick `vel_pose_connect`  
     
-    ![image](C:\Users\Administrator\Desktop\WorkSpace\AutowareRepo\doc\vel_pose_connect.png)
+    ![image](doc/vel_pose_connect.png)
   
   - click `app`of `waypoint loader`and set the csv path as: /home/autoware/shared_dir/gazebo_data/vehicle_sim/autoware_world/path/saved_waypoints.csv
     
-    ![image](C:\Users\Administrator\Desktop\WorkSpace\AutowareRepo\doc\waypoint_loader.png)
+    ![image](doc/waypoint_loader.png)
   
   - tick `waypoint_loader` and go to `rviz` to wait for the loading of gloabl waypoints
   
