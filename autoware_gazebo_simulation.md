@@ -25,7 +25,7 @@ colcon build --cmake-args -DCMAKE_BUILD_TYPE=ReleaseO
 
 ### step 3 upgrade gazebo
 
-- Please refer to the [gazebo offical tutorual](https://classic.gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=9.0) for details. Only small changes are made.
+- Please refer to the gazebo offical [tutorual 1](https://classic.gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=9.0) and [tutorial 2](https://classic.gazebosim.org/tutorials?tut=ros_installing&cat=connect_ros) for details. Only small changes are made.
 
 - Note that there is another widely used [tutorial](https://bitbucket.org/DataspeedInc/velodyne_simulator/src/56d11e899ce0a198e7206298b3aaaf8004f3a2c6/gazebo_upgrade.md?fileviewer=file-view-default) about upgrading gazebo. When I used this tutorial for gazebo upgrading, my later steps did not obtain a desired result. Therefore, be careful if you want to use this [tutorial](https://bitbucket.org/DataspeedInc/velodyne_simulator/src/56d11e899ce0a198e7206298b3aaaf8004f3a2c6/gazebo_upgrade.md?fileviewer=file-view-default).
 
