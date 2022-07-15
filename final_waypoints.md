@@ -1,6 +1,6 @@
 ## Data structure of "/final_waypoints"
 
-`"\final_waypoints"` is a part of final output of planning module. specifically, it is published by `velocity_set` node, whose source code in given below:
+`"\final_waypoints"` is a part of final output of planning module. specifically, it is published by `velocity_set` node, whose source code is given below:
 
 - path:core_planning\waypoint_planner\src\velocity_set\velocity_set.cpp
 

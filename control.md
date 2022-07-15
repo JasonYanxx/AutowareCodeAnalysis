@@ -28,6 +28,41 @@
 
 ### Source code analysis
 
+#### node `"/pure_pursuit"`
+
+Three main files:
+
+- src\autoware\core_planning\pure_pursuit\src\pure_pursuit_node.cpp
+
+- src\autoware\core_planning\pure_pursuit\src\pure_pursuit_core.cpp
+
+- src\autoware\core_planning\pure_pursuit\src\pure_pursuit.cpp
+
+##### (1) waypoint_follower::PurePursuitNode 的构造函数
+
+##### (2)
+
+#### node `"/twist_filter"`
+
+#### node`"/twist_gate"`
+
+`src\autoware\core_planning\twist_gate\src\twist_gate.cpp`
+
+将`"/twist_cmd"` and `"/ctrl_cmd"`的信息进行汇总，发布`"/vehicle_cmd"` ,该消息格式如下:
+
+```
+Header header
+autoware_msgs/SteerCmd steer_cmd
+autoware_msgs/AccelCmd accel_cmd
+autoware_msgs/BrakeCmd brake_cmd
+autoware_msgs/LampCmd lamp_cmd
+autoware_msgs/Gear gear_cmd
+int32 mode
+geometry_msgs/TwistStamped twist_cmd
+autoware_msgs/ControlCommand ctrl_cmd
+int32 emergency
+```
+
 ## Other method
 
 - todo

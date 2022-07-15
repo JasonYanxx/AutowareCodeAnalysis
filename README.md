@@ -30,6 +30,10 @@
   
   - [ROS-related.md](ROS-related.md)
 
+## Note:
+
+ - `// FLAG: KEY CODE` indicates that these several lines of code are very important. 
+
 ### TODO
 
 - analyze `"/final_waypoints"` (`autoware_msgs::Lane`)

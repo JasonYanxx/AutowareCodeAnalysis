@@ -326,7 +326,7 @@ whereas `visualization\vehicle_model\urdf\vehicle.gazebo` :
 
 as shown, `vehicle.gazebo` load two plugins: `libgazebo_ros_control.so` and `libgazebo_ros_joint_state_publisher.so`
 
--  <span id="jump_q1">todo q1:</span> what's the functionality of these two plugins?
+- <span id="jump_q1">todo q1:</span> what's the functionality of these two plugins?
 
 ##### (3) part 3: set parameters for sensors
 
@@ -420,7 +420,31 @@ void VehicleGazeboInputSubscriber::vehicleCmdCallback(const autoware_msgs::Vehic
 }
 ```
 
-As `twiststamped_ == true` and `ctrl_cmd_ == false`, we only need to analyze `publishTwistStamped2Gazebo()`
+The prototype of `autoware_msgs::VehicleCmd` is (`src\autoware\messages\autoware_msgs\msg\VehicleCmd.msg`):
+
+```
+Header header
+autoware_msgs/SteerCmd steer_cmd
+autoware_msgs/AccelCmd accel_cmd
+autoware_msgs/BrakeCmd brake_cmd
+autoware_msgs/LampCmd lamp_cmd
+autoware_msgs/Gear gear_cmd
+int32 mode
+geometry_msgs/TwistStamped twist_cmd
+autoware_msgs/ControlCommand ctrl_cmd
+int32 emergency
+```
+
+As `twiststamped_ == true` and `ctrl_cmd_ == false`, we only need to analyze `publishTwistStamped2Gazebo()`.
+
+In addtion, the input parameter of `publishTwistStamped2Gazebo()` is `input_msg->twist_cmd`, which is actually the compenent `twist` contianed in msgs `"/twist_cmd"` published by node `"twist_filter"`. Refer to [control.md](control.md) for details. 
+
+The prototype of `/twist_cmd->twist` is :
+
+```
+Vector3  linear
+Vector3  angular
+```
 
 ##### (3) analyze `publishTwistStamped2Gazebo()`
 
