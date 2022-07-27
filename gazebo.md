@@ -138,6 +138,19 @@ The analysis of `vehicle.xacro` is listed in section 3.
 
 `rosparam` [command](http://wiki.ros.org/roslaunch/XML/rosparam) here load parameters from `visualization\vehicle_model\config\vehicle_info.yaml`:
 
+| arg                    | value     | meaning                                             |
+| ---------------------- | --------- | --------------------------------------------------- |
+| wheel_radius           | 0.341     |                                                     |
+| wheel_width            | 0.225     |                                                     |
+| wheel_base             | 2.950     | distance between the front wheel and the rear wheel |
+| wheel_tread            | 1.55      |                                                     |
+| vehicle_mass           | 5000.0    |                                                     |
+| vehicle_length         | 4.82      |                                                     |
+| vehicle_width          | 1.81      |                                                     |
+| vehicle_height         | 1.5       |                                                     |
+| minimum_turning_radius | 2.950     |                                                     |
+| maximum_steering_angle | 97.3 #deg |                                                     |
+
 ```
 wheel_radius: 0.341
 wheel_width: 0.225

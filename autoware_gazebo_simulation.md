@@ -82,11 +82,50 @@ ___
 - In `Setup` page
   
   - click `TF, Vehicle Model` in order
+    
+    - Note: what happend when clicking `TF` ? actually, the correspinding command is `roslaunch runtime_manager setup_tf.launch`:
+      
+      ```html
+      <!--content in setup_tf.launch file-->
+      <launch>
+      
+        <arg name="x" default="0.0"/>
+        <arg name="y" default="0.0"/>
+        <arg name="z" default="0.0"/>
+        <arg name="yaw" default="0.0"/>
+        <arg name="pitch" default="0.0"/>
+        <arg name="roll" default="0.0"/>
+        <arg name="frame_id" default="base_link"/>
+        <arg name="child_frame_id" default="velodyne"/>
+        <arg name="period_in_ms" default="10"/>
+      
+        <node pkg="tf" type="static_transform_publisher" name="base_link_to_localizer" args="$(arg x) $(arg y) $(arg z) $(arg yaw) $(arg pitch) $(arg roll) $(arg frame_id) $(arg child_frame_id) $(arg period_in_ms)"/>
+      
+      </launch>
+      ```
+      
+      ```
+      please refer to [blog1](https://blog.csdn.net/heroacool/article/details/103091048) and [blog2](https://blog.csdn.net/tiancailx/article/details/78910317)for details.
+      ```
 
 - In `Map` page
   
   - set path of `Point CLoud`: /home/autoware/shared_dir/gazebo_data/vehicle_sim/autoware_world/pointcloud_map/xxx.pcd, and then click `Point CLoud`
+  
   - set path of `TF`: /home/autoware/shared_dir/gazebo_data/vehicle_sim/autoware_world/tf/tf.launch, and then click `TF`
+    
+    - Note: what happend when clicking `TF` ? actually, the correspinding command is `roslaunch /home/autoware/.../tf.launch`:
+      
+      ```html
+      <!--content in /home/autoware/.../tf.launch file-->
+      <launch>
+        <node pkg="tf" type="static_transform_publisher" name="world_to_map" args="0 0 0 0 0 0 /world /map 10" />
+      </launch>
+      ```
+      
+      ```
+      **we can see that `map` and `world` are excatly the same coordinate system.**
+      ```
 
 - In `Sensing` page
   
@@ -114,7 +153,7 @@ ___
   
   - tick `astar_void, velocity_set, pure_pursuit, twist_filter` in oder and go to rviz to see if the vehicle starts to move 
 
-### step 5 save all changes to a new docker image
+### step 6 save all changes to a new docker image
 
 Do not exit the container. Open a new terminator and execute the following actions.
 
