@@ -35,7 +35,7 @@
 
 #### 1. click `gazebo` in the `simulation` page of autoware runtime manager
 
-![image](doc\gazebo-in-runtime_manager.png)
+![image](doc/gazebo-in-runtime_manager.png)
 
 the corresponding command behind the `gazebo` button is listed in `utilities\runtime_manager\scripts\simulation.yaml` :
 

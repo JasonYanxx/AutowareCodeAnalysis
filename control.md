@@ -50,7 +50,7 @@ Three main files:
 
 - referred location: line 241 in pure_pursuit.cpp
 
-![image](doc\getNextWaypoint.png)
+![image](doc/getNextWaypoint.png)
 
 ##### (3) canGetCurvature()
 
@@ -66,18 +66,18 @@ After call `void PurePursuit::getNextWaypoint()` , there might be two major case
 
 - case 1: the `next_waypoint` is the first or the last one in `current_waypoints_`
   
-  ![image](doc\canGetCurvature_1.png)
+  ![image](doc/canGetCurvature_1.png)
 
 - case 2: others
   
   - case 2.1
-    ![image](doc\canGetCurvature_21.png)
+    ![image](doc/canGetCurvature_21.png)
   
   - case 2.2:
-    ![image](doc\canGetCurvature_22.png)
+    ![image](doc/canGetCurvature_22.png)
 
 Finally, call `double PurePursuit::calcCurvature(geometry_msgs::Point target) const` to calulate curvature based on Ackerman turning geometry.
-![image](doc\canGetCurvature_3.png)
+![image](doc/canGetCurvature_3.png)
 
 ##### (4) calcRelativeCoordinate()
 
@@ -125,7 +125,7 @@ void PurePursuitNode::publishTwistStamped(
 
 whereas `computeCommandVelocity()` mainly use the velocity of the **first ** waypoint to obtain the `command_velocity`. The essence of `computeCommandVelocity()` is described below (Note: acc constrains are added by me ):
 
-![image](doc\computeCommandVelocity.png)
+![image](doc/computeCommandVelocity.png)
 
 this function publish information by topic `"/twist_raw"`:
 
@@ -156,7 +156,7 @@ void PurePursuitNode::publishControlCommandStamped(
 ```
 
 whereas `computeCommandAccel()` mainly use the velocity of the **second ** waypoint to obtain the `command_acc`. The essence of `computeCommandAccel()` is described below (Note: acc constrains are added by me ):
-![image](doc\computeCommandAccel.png)
+![image](doc/computeCommandAccel.png)
 
 this function publish information by topic `"/ctr_raw"`:
 
